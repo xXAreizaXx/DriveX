@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
+    "indent": ["error", 4],
+    "jsx-a11y/anchor-is-valid": "error",
+    "no-unused-vars": "off",
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"]
+  },
+  "settings": {
+      "react": {
+          "version": "detect"
+      }
+  }
+}

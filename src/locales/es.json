@@ -1,0 +1,74 @@
+{
+    "Constants": {
+        "Btn": {
+            "Cancel": "Cancelar",
+            "Close": "Cerrar",
+            "Continue": "Continuar",
+            "Create": "Crear",
+            "CreateNew": "Crear nuevo",
+            "Delete": "Eliminar",
+            "Edit": "Editar",
+            "Save": "Guardar"
+        },
+        "Menu": {
+            "Account": "Cuenta",
+            "Help": "Ayuda",
+            "Logout": "Salir",
+            "NewContract": "Nuevo contrato",
+            "NewPerson": "Nueva persona"
+        },
+        "Routes": {
+            "Catalogs": "Catálogos",
+            "Config": "Configuración",
+            "Contracts": "Contratos",
+            "Financial": "Corrida Financiera",
+            "Home": "Principal",
+            "Managmentinfo": {
+                "Managmentinfo": "Gestión de información",
+                "Paymentlist": "Lista de pagos",
+                "Reports": "Reportes"
+            },
+            "Payments": "Pagos",
+            "Persons": "Personas",
+            "Pld": {
+                "Alerts": "Alertas",
+                "Blacklist": "Lista negra",
+                "Config": "Configuración de PLD",
+                "General": "General",
+                "PLD": "PLD"
+            }
+        },
+        "Search": "Buscar",
+        "Welcome": "Bienvenido"
+    },
+    "Language": {
+        "en": "Inglés - USA",
+        "gt": "Español - GUA",
+        "mx": "Español - MEX"
+    },
+    "Login": {
+        "Company": "Empresa",
+        "CompanyPlaceholder": "Nombre de tu empresa",
+        "Enter": "Iniciar sesión",
+        "Error": {
+            "Company": "El nombre de la empresa no se encuentra registrado, verifique la información y vuelva a intentarlo.",
+            "SignIn": "Correo electrónico o contraseña incorrectos"
+        },
+        "ForgotPassword": "¿Olvidaste tu contraseña?",
+        "Password": "Contraseña",
+        "PasswordPlaceholder": "Ingresa tu contraseña",
+        "Subtitle": {
+            "Company": "Ingresa el nombre de tu empresa asociada y verifica si se encuentra registrada en el sistema.",
+            "SignIn": "Accede a tu cuenta, consulta tus créditos, clientes, etc."
+        },
+        "Title": "Iniciar sesión",
+        "User": "Usuario",
+        "UserPlaceholder": "Ingresa tu usuario",
+        "Verify": "Verificar Empresa"
+    },
+    "Schema": {
+        "Company": "Verifique la información ingresada",
+        "Password": "Verifique la información ingresada",
+        "User": "Verifique la información ingresada"
+    }
+}

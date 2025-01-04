@@ -1,0 +1,74 @@
+{
+    "Constants": {
+        "Btn": {
+            "Cancel": "Cancel",
+            "Close": "Close",
+            "Continue": "Continue",
+            "Create": "Create",
+            "CreateNew": "Create New",
+            "Delete": "Delete",
+            "Edit": "Edit",
+            "Save": "Save"
+        },
+        "Menu": {
+            "Account": "Account",
+            "Help": "Help",
+            "Logout": "Logout",
+            "NewContract": "New contract",
+            "NewPerson": "New person"
+        },
+        "Routes": {
+            "Catalogs": "Catalogs",
+            "Config": "Configuration",
+            "Contracts": "Contracts",
+            "Financial": "Financial Run",
+            "Home": "Home",
+            "Managmentinfo": {
+                "Managmentinfo": "Management Information",
+                "Paymentlist": "Payment List",
+                "Reports": "Reports"
+            },
+            "Payments": "Payments",
+            "Persons": "Persons",
+            "Pld": {
+                "Alerts": "Alerts",
+                "Blacklist": "Blacklist",
+                "Config": "PLD Configuration",
+                "General": "General",
+                "PLD": "PLD"
+            }
+        },
+        "Search": "Search",
+        "Welcome": "Welcome"
+    },
+    "Language": {
+        "en": "English - USA",
+        "gt": "Spanish - GUA",
+        "mx": "Spanish - MEX"
+    },
+    "Login": {
+        "Company": "Company",
+        "CompanyPlaceholder": "Your company name",
+        "Enter": "Log In",
+        "Error": {
+            "Company": "The company name is not registered, please verify the information and try again.",
+            "SignIn": "Incorrect email or password"
+        },
+        "ForgotPassword": "Forgot your password?",
+        "Password": "Password",
+        "PasswordPlaceholder": "Enter your password",
+        "Subtitle": {
+            "Company": "Enter your associated company name and check if it is registered in the system.",
+            "SignIn": "Access your account, check your credits, clients, etc."
+        },
+        "Title": "Log In",
+        "User": "User",
+        "UserPlaceholder": "Enter your username",
+        "Verify": "Verify Company"
+    },
+    "Schema": {
+        "Company": "Verify the entered information",
+        "Password": "Verify the entered information",
+        "User": "Verify the entered information"
+    }
+}
