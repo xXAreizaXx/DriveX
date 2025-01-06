@@ -83,7 +83,6 @@ export default function LoginPage() {
                     {t("Login.Subtitle.SignIn")}
                 </Typography>
             </HeaderForm>
-
             <BodyForm>
                 <FormControl>
                     <FormLabel id="demo-row-radio-buttons-group-label">
@@ -101,7 +100,6 @@ export default function LoginPage() {
                         <FormControlLabel value={UserRole.GUEST} control={<Radio />} label={t("Login.Guest")} />
                     </RadioGroup>
                 </FormControl>
-
                 <InputField
                     control={control}
                     errors={errors}

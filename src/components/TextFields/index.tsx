@@ -7,7 +7,7 @@ import { Control, Controller, FieldErrors, UseFormRegister } from "react-hook-fo
 import { useTranslation } from "react-i18next";
 
 // MUI
-import { IconButton, InputAdornment, TextField, type TextFieldVariants } from "@mui/material";
+import { FormControl, FormHelperText, IconButton, InputAdornment, InputLabel, MenuItem, Select, TextField, type TextFieldVariants } from "@mui/material";
 
 // Icons
 import { VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material";
@@ -21,6 +21,17 @@ interface InputFieldProps {
     placeholder: string;
     register: UseFormRegister<any>;
     type?: string;
+    variant?: TextFieldVariants;
+}
+
+interface InputSelectProps {
+    control: Control<any>;
+    errors: FieldErrors;
+    label: string;
+    name: string;
+    options: { label: string; value: string }[];
+    placeholder: string;
+    register: UseFormRegister<any>;
     variant?: TextFieldVariants;
 }
 
@@ -115,6 +126,50 @@ export function InputFieldPassword(props: InputFieldProps) {
                     type={showPassword ? "text" : "password"}
                     variant={variant}
                 />
+            )}
+        />
+    );
+}
+
+export function InputSelect(props: InputSelectProps) {
+    // Props
+    const { label, name, options, variant = "outlined", ...rest } = props;
+
+    // Form
+    const { control, errors, register } = rest;
+
+    // Translate
+    const { t } = useTranslation();
+
+    // Message Error
+    const error = t(errors?.[name]?.message as string) ?? errors?.[name]?.message;
+
+    return (
+        <Controller
+            {...register(name)}
+            control={control}
+            name={name}
+            render={({ field }) => (
+                <FormControl size="small" error={Boolean(error)}>
+                    <InputLabel id="demo-select-small-label">{label}</InputLabel>
+                    <Select
+                        {...field}
+                        {...props}
+                        {...rest}
+                        error={Boolean(error)}
+                        label={label}
+                        size="small"
+                        labelId="demo-select-small-label"
+                        id="demo-select-small"
+                    >
+                        {options.map((option) => (
+                            <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                            </MenuItem>
+                        ))}
+                    </Select>
+                    {error && <FormHelperText>{error}</FormHelperText>}
+                </FormControl>
             )}
         />
     );

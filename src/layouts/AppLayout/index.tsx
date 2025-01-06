@@ -6,6 +6,7 @@ import { useState } from "react";
 // Components
 import NavBar from "@components/NavBar";
 import SlideBar from "@components/SlideBar";
+import SliderDrawer from "@components/SliderDrawer";
 
 // MUI
 import { Toolbar } from "@mui/material";
@@ -18,13 +19,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     const [open, setOpen] = useState(true);
 
     // Functions
-    const toggleDrawer = () => {
+    const toggleSlider = () => {
         setOpen(!open);
     };
 
     return (
         <AppContainer>
-            <SlideBar open={open} toggleDrawer={toggleDrawer} />
+            <SlideBar open={open} toggleDrawer={toggleSlider} />
             <NavBar open={open} />
             <AppContent>
                 <Toolbar />
@@ -32,6 +33,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                     {children}
                 </AppChildren>
             </AppContent>
+            <SliderDrawer />
         </AppContainer>
     );
 }

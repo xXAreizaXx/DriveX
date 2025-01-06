@@ -7,9 +7,11 @@
             "Create": "Crear",
             "CreateNew": "Crear nuevo",
             "Delete": "Eliminar",
-            "Edit": "Editar",
+            "Update": "Actualizar",
             "Save": "Guardar"
         },
+        "Delete": "Eliminar",
+        "Update": "Actualizar",
         "Menu": {
             "Account": "Cuenta",
             "Help": "Ayuda",
@@ -28,6 +30,7 @@
         "Welcome": "Bienvenido"
     },
     "Headers": {
+        "Actions": "Acciones",
         "Client": "Cliente",
         "CreatedAt": "Fecha de creación",
         "Plate": "Placa",
@@ -59,6 +62,20 @@
     "Schema": {
         "Password": "Contraseña requerida",
         "User": "Usuario requerido"
+    },
+    "Transfers": {
+        "Create": {
+            "Title": "Crear transferencia",
+            "Description": "Crea una nueva transferencia"
+        },
+        "Delete": {
+            "Title": "Eliminar transferencia",
+            "Description": "Elimina una transferencia"
+        },
+        "Update": {
+            "Title": "Actualizar transferencia",
+            "Description": "Actualiza una transferencia"
+        }
     },
     "Unauthorized": {
         "Title": "Acceso denegado",

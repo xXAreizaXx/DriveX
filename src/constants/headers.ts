@@ -4,4 +4,5 @@ export const HTransfers: readonly string[] = [
     "Headers.Client",
     "Headers.Transmitter",
     "Headers.CreatedAt",
+    "Headers.Actions",
 ];

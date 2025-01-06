@@ -7,9 +7,11 @@
             "Create": "Create",
             "CreateNew": "Create new",
             "Delete": "Delete",
-            "Edit": "Edit",
+            "Update": "Update",
             "Save": "Save"
         },
+        "Delete": "Delete",
+        "Update": "Update",
         "Menu": {
             "Account": "Account",
             "Help": "Help",
@@ -28,6 +30,7 @@
         "Welcome": "Welcome"
     },
     "Headers": {
+        "Actions": "Actions",
         "Client": "Client",
         "CreatedAt": "Creation date",
         "Plate": "Plate",
@@ -59,6 +62,20 @@
     "Schema": {
         "Password": "Password required",
         "User": "User required"
+    },
+    "Transfers": {
+        "Create": {
+            "Title": "Create transfer",
+            "Description": "Create a new transfer"
+        },
+        "Delete": {
+            "Title": "Delete transfer",
+            "Description": "Delete a transfer"
+        },
+        "Update": {
+            "Title": "Update transfer",
+            "Description": "Update a transfer"
+        }
     },
     "Unauthorized": {
         "Title": "Access denied",

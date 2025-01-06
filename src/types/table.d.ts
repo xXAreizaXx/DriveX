@@ -14,3 +14,8 @@ interface IPaginationProps {
     setPage: React.Dispatch<React.SetStateAction<number>>
     setRowsPerPage: React.Dispatch<React.SetStateAction<number>>
 }
+
+interface ITableActionsProps {
+    module: "transfers"
+    params: IParams;
+}

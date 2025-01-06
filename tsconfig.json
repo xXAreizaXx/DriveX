@@ -20,6 +20,7 @@
       "@providers/*": ["./src/providers/*"],
       "@services/*": ["./src/services/*"],
       "@types/*": ["./src/types/*"],
+      "@ui/*": ["./src/app/ui/*"],
       "@utils/*": ["./src/utils/*"],
     },
     "plugins": [{ "name": "next" }],

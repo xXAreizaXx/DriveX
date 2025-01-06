@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // MUI
-import { TableCell, TableRow, TextField } from "@mui/material";
+import { TableCell, TableRow } from "@mui/material";
 
 // HOC
 import { withAuth } from "@HOC/withAuth";
@@ -14,6 +14,7 @@ import { withAuth } from "@HOC/withAuth";
 // Components
 import Pagination from "@components/Pagination";
 import { TableSkeleton } from "@components/Skeletons";
+import TableActions from "@components/TableActions";
 import TableLayout from "@components/TableLayout";
 
 // Services
@@ -48,12 +49,6 @@ function TransfersPage() {
 
     return (
         <TableLayout tableHeader={HTransfers}>
-            <TextField
-                key="Filter"
-                fullWidth
-                label={t("Constants.Search")}
-                variant="outlined"
-            />
             {visibleRows?.map((row) => (
                 <TableRow key={row?.id} tabIndex={-1}>
                     <TableCell align="center">{row?.plate}</TableCell>
@@ -61,6 +56,9 @@ function TransfersPage() {
                     <TableCell align="center">{row?.client}</TableCell>
                     <TableCell align="center">{row?.transmitter}</TableCell>
                     <TableCell align="center">{row?.created_at}</TableCell>
+                    <TableCell align="center">
+                        <TableActions module="transfers" params={{ id: row?.id }} />
+                    </TableCell>
                 </TableRow>
             ))}
             <Pagination
