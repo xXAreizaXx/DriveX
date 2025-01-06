@@ -26,3 +26,9 @@ export function formatterShortDate(date: Date) {
 }
 // Example of use: formatterShortDate(new Date());
 // Result: "6/9/2021"
+
+export function shortViewText(text: string) {
+    return text?.length > 10 ? text?.slice(0, 10) + "..." : text;
+}
+// Example of use: shortViewText("This is a long text");
+// Result: "This is a long text..."

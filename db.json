@@ -1,0 +1,56 @@
+{
+  "transfers": [
+    {
+      "id": 1,
+      "plate": "2647KLR",
+      "type": "Venta",
+      "client": "31002483T",
+      "transmitter": "30482746L",
+      "service": 900,
+      "created_at": "2024-12-17T18:00:00"
+    },
+    {
+      "id": 2,
+      "plate": "9821BHF",
+      "type": "Cesión",
+      "client": "52018492F",
+      "transmitter": "47012845N",
+      "service": 450,
+      "created_at": "2024-12-16T10:30:00"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "document": "31002483T",
+      "name": "Cliente A"
+    },
+    {
+      "id": 2,
+      "document": "30482746L",
+      "name": "Transmitente B"
+    },
+    {
+      "id": 3,
+      "document": "52018492F",
+      "name": "Cliente C"
+    },
+    {
+      "id": 4,
+      "document": "47012845N",
+      "name": "Transmitente D"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "plate": "2647KLR",
+      "service": 900
+    },
+    {
+      "id": 2,
+      "plate": "9821BHF",
+      "service": 450
+    }
+  ]
+}

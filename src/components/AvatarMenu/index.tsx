@@ -5,29 +5,17 @@ import { useTranslation } from "react-i18next";
 // MUI
 import { Avatar, Box, Divider, ListItemIcon, Menu, MenuItem, Typography } from "@mui/material";
 
+// Context
+import { useAuth } from "@contexts/AuthContext";
+
+// Utils
+import { shortViewText } from "@utils/functions";
+
 // Icons
-import { AccountCircleOutlined, ExpandMoreOutlined, HelpOutlineOutlined, LogoutOutlined } from "@mui/icons-material";
+import { ExpandMoreOutlined, LogoutOutlined } from "@mui/icons-material";
 
 // Styled
 import { BtnAvatar } from "./styled";
-
-const options = [
-    {
-        icon: <AccountCircleOutlined />,
-        label: "Constants.Menu.Account",
-        onClick: () => console.log("Profile"),
-    },
-    {
-        icon: <HelpOutlineOutlined />,
-        label: "Constants.Menu.Help",
-        onClick: () => console.log("Logout"),
-    },
-    {
-        icon: <LogoutOutlined />,
-        label: "Constants.Menu.Logout",
-        onClick: () => console.log("Logout"),
-    },
-];
 
 interface IAvatarMenuProps {
     isOpen: boolean;
@@ -36,6 +24,9 @@ interface IAvatarMenuProps {
 export default function AvatarMenu(props: IAvatarMenuProps) {
     // Translate
     const { t } = useTranslation();
+
+    // Auth
+    const { user, logout } = useAuth();
 
     // States
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -64,14 +55,14 @@ export default function AvatarMenu(props: IAvatarMenuProps) {
                 variant="text"
             >
                 <Box sx={{ display: "flex", gap: "10px" }}>
-                    <Avatar sx={{ width: 40, height: 40 }}>JA</Avatar>
+                    <Avatar sx={{ width: 40, height: 40, backgroundColor: "primary.main", color: "white" }}>JA</Avatar>
                     {props.isOpen && (
                         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
                             <Typography component="p" noWrap fontWeight={600} variant="body2" sx={{ flexGrow: 1, color: "black" }}>
-                                Jorge Areiza
+                                {user?.role}
                             </Typography>
                             <Typography component="p" noWrap fontWeight={400} variant="body2" sx={{ flexGrow: 1, color: "black" }}>
-                                1000566613
+                                {shortViewText(user?.email as string)}
                             </Typography>
                         </Box>
                     )}
@@ -90,26 +81,26 @@ export default function AvatarMenu(props: IAvatarMenuProps) {
             >
                 <MenuItem onClick={handleClose}>
                     <Box sx={{ display: "flex", gap: "10px" }}>
-                        <Avatar sx={{ width: 40, height: 40 }}>JA</Avatar>
+                        <Avatar sx={{ width: 40, height: 40, backgroundColor: "primary.main", color: "white" }}>JA</Avatar>
                         {props.isOpen && (
                             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
                                 <Typography component="p" noWrap fontWeight={600} variant="body2" sx={{ flexGrow: 1, color: "black" }}>
-                                    Jorge Areiza
+                                    {user?.role}
                                 </Typography>
                                 <Typography component="p" noWrap fontWeight={400} variant="body2" sx={{ flexGrow: 1, color: "black" }}>
-                                    jorgeareiza2001@gmail.com
+                                    {user?.email}
                                 </Typography>
                             </Box>
                         )}
                     </Box>
                 </MenuItem>
                 <Divider />
-                {options.map((option, index) => (
-                    <MenuItem key={index} onClick={option.onClick}>
-                        <ListItemIcon>{option.icon}</ListItemIcon>
-                        {t(option.label)}
-                    </MenuItem>
-                ))}
+                <MenuItem onClick={logout}>
+                    <ListItemIcon>
+                        <LogoutOutlined />
+                    </ListItemIcon>
+                    {t("Constants.Menu.Logout")}
+                </MenuItem>
             </Menu>
         </div>
     );

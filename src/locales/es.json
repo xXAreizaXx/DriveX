@@ -17,58 +17,51 @@
             "NewContract": "Nuevo contrato",
             "NewPerson": "Nueva persona"
         },
+        "Of": "de",
         "Routes": {
-            "Catalogs": "Catálogos",
-            "Config": "Configuración",
-            "Contracts": "Contratos",
-            "Financial": "Corrida Financiera",
             "Home": "Principal",
-            "Managmentinfo": {
-                "Managmentinfo": "Gestión de información",
-                "Paymentlist": "Lista de pagos",
-                "Reports": "Reportes"
-            },
-            "Payments": "Pagos",
-            "Persons": "Personas",
-            "Pld": {
-                "Alerts": "Alertas",
-                "Blacklist": "Lista negra",
-                "Config": "Configuración de PLD",
-                "General": "General",
-                "PLD": "PLD"
-            }
+            "Roles": "Roles y Permisos",
+            "Transfers": "Transferencias"
         },
+        "RowsPerPage": "Filas por página",
         "Search": "Buscar",
         "Welcome": "Bienvenido"
     },
+    "Headers": {
+        "Client": "Cliente",
+        "CreatedAt": "Fecha de creación",
+        "Plate": "Placa",
+        "TransferType": "Tipo de transferencia",
+        "Transmitter": "Transmisor"
+    },
     "Language": {
-        "en": "Inglés - USA",
-        "gt": "Español - GUA",
-        "mx": "Español - MEX"
+        "en": "Inglés",
+        "es": "Español"
     },
     "Login": {
-        "Company": "Empresa",
-        "CompanyPlaceholder": "Nombre de tu empresa",
+        "Admin": "Administrador",
         "Enter": "Iniciar sesión",
         "Error": {
-            "Company": "El nombre de la empresa no se encuentra registrado, verifique la información y vuelva a intentarlo.",
             "SignIn": "Correo electrónico o contraseña incorrectos"
         },
         "ForgotPassword": "¿Olvidaste tu contraseña?",
+        "Guest": "Invitado",
         "Password": "Contraseña",
         "PasswordPlaceholder": "Ingresa tu contraseña",
+        "Role": "Rol",
         "Subtitle": {
-            "Company": "Ingresa el nombre de tu empresa asociada y verifica si se encuentra registrada en el sistema.",
-            "SignIn": "Accede a tu cuenta, consulta tus créditos, clientes, etc."
+            "SignIn": "Consulta tus transferencias y contratos"
         },
         "Title": "Iniciar sesión",
         "User": "Usuario",
-        "UserPlaceholder": "Ingresa tu usuario",
-        "Verify": "Verificar Empresa"
+        "UserPlaceholder": "Ingresa tu usuario"
     },
     "Schema": {
-        "Company": "Verifique la información ingresada",
-        "Password": "Verifique la información ingresada",
-        "User": "Verifique la información ingresada"
+        "Password": "Contraseña requerida",
+        "User": "Usuario requerido"
+    },
+    "Unauthorized": {
+        "Title": "Acceso denegado",
+        "Subtitle": "No tienes permiso para acceder a esta página"
     }
 }

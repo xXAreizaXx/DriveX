@@ -5,7 +5,7 @@
             "Close": "Close",
             "Continue": "Continue",
             "Create": "Create",
-            "CreateNew": "Create New",
+            "CreateNew": "Create new",
             "Delete": "Delete",
             "Edit": "Edit",
             "Save": "Save"
@@ -17,58 +17,51 @@
             "NewContract": "New contract",
             "NewPerson": "New person"
         },
+        "Of": "of",
         "Routes": {
-            "Catalogs": "Catalogs",
-            "Config": "Configuration",
-            "Contracts": "Contracts",
-            "Financial": "Financial Run",
             "Home": "Home",
-            "Managmentinfo": {
-                "Managmentinfo": "Management Information",
-                "Paymentlist": "Payment List",
-                "Reports": "Reports"
-            },
-            "Payments": "Payments",
-            "Persons": "Persons",
-            "Pld": {
-                "Alerts": "Alerts",
-                "Blacklist": "Blacklist",
-                "Config": "PLD Configuration",
-                "General": "General",
-                "PLD": "PLD"
-            }
+            "Roles": "Roles and Permissions",
+            "Transfers": "Transfers"
         },
+        "RowsPerPage": "Rows per page",
         "Search": "Search",
         "Welcome": "Welcome"
     },
+    "Headers": {
+        "Client": "Client",
+        "CreatedAt": "Creation date",
+        "Plate": "Plate",
+        "TransferType": "Transfer type",
+        "Transmitter": "Transmitter"
+    },
     "Language": {
-        "en": "English - USA",
-        "gt": "Spanish - GUA",
-        "mx": "Spanish - MEX"
+        "en": "English",
+        "es": "Spanish"
     },
     "Login": {
-        "Company": "Company",
-        "CompanyPlaceholder": "Your company name",
-        "Enter": "Log In",
+        "Admin": "Admin",
+        "Enter": "Log in",
         "Error": {
-            "Company": "The company name is not registered, please verify the information and try again.",
             "SignIn": "Incorrect email or password"
         },
         "ForgotPassword": "Forgot your password?",
+        "Guest": "Guest",
         "Password": "Password",
         "PasswordPlaceholder": "Enter your password",
+        "Role": "Role",
         "Subtitle": {
-            "Company": "Enter your associated company name and check if it is registered in the system.",
-            "SignIn": "Access your account, check your credits, clients, etc."
+            "SignIn": "Check your transfers and contracts"
         },
-        "Title": "Log In",
+        "Title": "Log in",
         "User": "User",
-        "UserPlaceholder": "Enter your username",
-        "Verify": "Verify Company"
+        "UserPlaceholder": "Enter your username"
     },
     "Schema": {
-        "Company": "Verify the entered information",
-        "Password": "Verify the entered information",
-        "User": "Verify the entered information"
+        "Password": "Password required",
+        "User": "User required"
+    },
+    "Unauthorized": {
+        "Title": "Access denied",
+        "Subtitle": "You don't have permission to access this page"
     }
 }

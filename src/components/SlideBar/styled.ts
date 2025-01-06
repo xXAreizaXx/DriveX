@@ -15,6 +15,7 @@ export const SlideDrawer = styled(MuiDrawer, {
 })(({ theme, open }) => ({
     "& .MuiDrawer-paper": {
         position: "relative",
+        backgroundColor: theme.palette.background.default,
         whiteSpace: "nowrap",
         width: drawerWidth,
         transition: theme.transitions.create("width", {
@@ -37,7 +38,7 @@ export const SlideHeader = styled(Box)<ISlideDrawerProps>(({ open }) => ({
     alignItems: "center",
     display: "flex",
     justifyContent: "space-between",
-    padding: 12,
+    padding: "12px 12px 0px 12px",
 
     ...(!open && {
         justifyContent: "center",

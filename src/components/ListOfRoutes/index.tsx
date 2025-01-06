@@ -2,14 +2,16 @@
 import { usePathname, useRouter } from "next/navigation";
 
 // ReactJS
-import { JSX } from "react";
 import { useTranslation } from "react-i18next";
 
 // MUI
 import { List, ListItem, Tooltip, Typography } from "@mui/material";
 
 // Constants
-import { routes } from "@constants/routes";
+import { Route, routes } from "@constants/routes";
+
+// Contexts
+import { useAuth } from "@contexts/AuthContext";
 
 // Styled
 import { CustomListItem } from "./styled";
@@ -19,11 +21,8 @@ interface IListOfRoutesProps {
     open?: boolean;
 }
 
-interface ICustonItemProps {
-    href: string;
-    icon?: JSX.Element;
+interface ICustonItemProps extends Route {
     isOpen?: boolean;
-    label: string;
 }
 
 export function CustomItem(props: ICustonItemProps) {
@@ -40,13 +39,13 @@ export function CustomItem(props: ICustonItemProps) {
     const { push } = useRouter();
 
     // Constants
-    const isActived = pathname === href;
+    const isActive = pathname === href;
 
     if (!isOpen) {
         return (
             <Tooltip title={t(label)} placement="right">
                 <ListItem disablePadding>
-                    <CustomListItem isActived={isActived} open={isOpen} onClick={() => push(href)}>
+                    <CustomListItem isActive={isActive} open={isOpen} onClick={() => push(href)}>
                         {icon ? icon : <Typography variant="body2">{t(label)}</Typography>}
                     </CustomListItem>
                 </ListItem>
@@ -56,7 +55,7 @@ export function CustomItem(props: ICustonItemProps) {
 
     return (
         <ListItem disablePadding>
-            <CustomListItem isActived={isActived} open={isOpen} onClick={() => push(href)}>
+            <CustomListItem isActive={isActive} open={isOpen} onClick={() => push(href)}>
                 {icon}
                 <Typography variant="body2">{t(label)}</Typography>
             </CustomListItem>
@@ -65,9 +64,17 @@ export function CustomItem(props: ICustonItemProps) {
 }
 
 export default function ListOfRoutes(props: IListOfRoutesProps) {
+    const { hasPermission } = useAuth();
+
+    const filteredRoutes = routes.filter(route =>
+        !route.requiredPermission || hasPermission(route.requiredPermission)
+    );
+
     return (
-        <List component="nav" sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1 }}>
-            {routes.map((item, index) => <CustomItem key={index} isOpen={props?.open} {...item} />)}
+        <List component="nav" sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, p: 0 }}>
+            {filteredRoutes.map((item, index) => (
+                <CustomItem key={index} isOpen={props?.open} {...item} />
+            ))}
         </List>
     );
 }

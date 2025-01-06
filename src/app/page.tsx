@@ -1,6 +1,16 @@
+"use client";
+
 // NextJS
 import { redirect } from "next/navigation";
 
-export default function HomePage() {
-  redirect("/home");
+// Context
+import { useAuth } from "@contexts/AuthContext";
+
+export default function RootPage() {
+    // Hooks
+    const { isAuthenticated } = useAuth();
+
+    if (isAuthenticated) redirect("/home");
+
+    redirect("/login");
 }

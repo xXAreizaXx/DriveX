@@ -3,24 +3,25 @@ import { ListItemButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 interface IListItemButtonProps {
-    isActived?: boolean;
+    isActive?: boolean;
     open?: boolean;
 }
 
-export const CustomListItem = styled(ListItemButton)<IListItemButtonProps>(({ theme, isActived, open }) => ({
+export const CustomListItem = styled(ListItemButton)<IListItemButtonProps>(({ theme, isActive, open }) => ({
     alignItems: "center",
     borderRadius: 8,
+    color: theme.palette.primary.main,
     display: "flex",
     gap: "0.5rem",
-    
+
     "&:hover": {
-        backgroundColor: theme.palette.primary.light,
-        color: theme.palette.primary.main,
+        backgroundColor: "#f97316",
+        color: "#9a4a12",
     },
 
-    ...(isActived && {
-        backgroundColor: theme.palette.primary.light,
-        color: theme.palette.primary.main,
+    ...(isActive && {
+        backgroundColor: "#f97316",
+        color: "#9a4a12",
     }),
 
     ...(!open && {

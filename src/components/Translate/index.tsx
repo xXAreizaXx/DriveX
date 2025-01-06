@@ -8,8 +8,8 @@ import { useTranslation } from "react-i18next";
 import { useLanguage } from "@contexts/LanguageContext";
 
 // MUI
-import Button from "@mui/material/Button";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
 // Icons
@@ -30,13 +30,13 @@ export default function Translate() {
 
     // Constants
     const open = Boolean(anchorEl);
-    
+
     // Functions
     const handleLanguage = useCallback((language: string) => {
         changeLanguage(language);
         setAnchorEl(null);
     }, [changeLanguage]);
-        
+
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -46,7 +46,7 @@ export default function Translate() {
     };
 
     return (
-        <div>
+        <>
             <Button
                 aria-controls={open ? "demo-customized-menu" : undefined}
                 aria-expanded={open ? "true" : undefined}
@@ -56,7 +56,7 @@ export default function Translate() {
                 endIcon={<KeyboardArrowDownIcon />}
                 id="language-button"
                 onClick={handleClick}
-                sx={{ display: "flex", gap: 1 }}
+                sx={{ display: "flex", gap: 1, backgroundColor: "primary.main", borderColor: "primary.main" }}
                 variant="outlined"
             >
                 <Language />
@@ -69,16 +69,13 @@ export default function Translate() {
                 onClose={handleClose}
                 open={open}
             >
-                <MenuItem onClick={() => handleLanguage("mx")} disableRipple>
-                    {t("Language.mx")}
-                </MenuItem>
-                <MenuItem onClick={() => handleLanguage("gt")} disableRipple>
-                    {t("Language.gt")}
+                <MenuItem onClick={() => handleLanguage("es")} disableRipple>
+                    {t("Language.es")}
                 </MenuItem>
                 <MenuItem onClick={() => handleLanguage("en")} disableRipple>
                     {t("Language.en")}
                 </MenuItem>
             </StyledMenu>
-        </div>
+        </>
     );
 }

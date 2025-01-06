@@ -16,14 +16,12 @@ export default function SlideBar({ open, toggleDrawer }: { open: boolean; toggle
     return (
         <SlideDrawer variant="permanent" open={open}>
             <SlideHeader open={open}>
-                <Box sx={{ ...(!open && { display: "none" }) }}>
-                    <Logo width={100} height={30} />
-                </Box>
+                {open && <Logo width={80} height={64} />}
                 <IconButton onClick={toggleDrawer}>
                     {open ? <KeyboardDoubleArrowLeft /> : <KeyboardDoubleArrowRight />}
                 </IconButton>
             </SlideHeader>
-            <Box sx={{ px: 2, pb: 2, display: "flex", flexDirection: "column", gap: 2, height: "100%" }}>
+            <Box sx={{ p: 2, display: "flex", flexDirection: "column", gap: 2, height: "100%" }}>
                 <ListOfRoutes open={open} />
                 <Box sx={{ mt: "auto", display: "flex", flexDirection: "column", gap: 1 }}>
                     <AvatarMenu isOpen={open} />

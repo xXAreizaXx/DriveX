@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { Typography } from "@mui/material";
 
 // Styled
+import Translate from "@components/Translate";
 import { AppBar } from "./styled";
 
 export default function NavBar({ open }: { open: boolean }) {
@@ -34,6 +35,7 @@ export default function NavBar({ open }: { open: boolean }) {
             <Typography component="h1" noWrap fontWeight={600} variant="h5" sx={{ flexGrow: 1, color: "black" }}>
                 {route}
             </Typography>
+            <Translate />
         </AppBar>
     );
 }

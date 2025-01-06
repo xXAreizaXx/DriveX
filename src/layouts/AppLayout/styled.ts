@@ -7,7 +7,6 @@ export const AppContainer = styled(Box)({
 });
 
 export const AppContent = styled(Box)(({ theme }) => ({
-    backgroundColor: theme?.palette?.background?.default,
     flexGrow: 1,
     height: "100dvh",
 }));

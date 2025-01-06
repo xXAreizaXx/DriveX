@@ -1,15 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 // ReactJS
-import { Control, Controller, FieldErrors, UseFormRegister } from "react-hook-form";
 import { useState } from "react";
+import { Control, Controller, FieldErrors, UseFormRegister } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 // MUI
 import { IconButton, InputAdornment, TextField, type TextFieldVariants } from "@mui/material";
 
 // Icons
-import { VisibilityOutlined, VisibilityOffOutlined } from "@mui/icons-material";
+import { VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material";
 
 // Interfaces
 interface InputFieldProps {
@@ -46,11 +47,13 @@ export function InputField(props: InputFieldProps) {
                     {...field}
                     {...props}
                     {...rest}
+                    sx={{ backgroundColor: "background.paper" }}
                     error={Boolean(error)}
                     helperText={error}
                     id="outlined-basic"
                     label={label}
                     placeholder={placeholder}
+                    size="small"
                     variant={variant}
                 />
             )}
@@ -108,6 +111,7 @@ export function InputFieldPassword(props: InputFieldProps) {
                     }}
                     label={label}
                     placeholder={placeholder}
+                    size="small"
                     type={showPassword ? "text" : "password"}
                     variant={variant}
                 />

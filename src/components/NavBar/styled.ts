@@ -13,7 +13,7 @@ export const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
 })<AppBarProps>(({ theme, open }) => ({
     alignItems: "center",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: "#fdac74",
     display: "flex",
     flexDirection: "row",
     height: 64,
