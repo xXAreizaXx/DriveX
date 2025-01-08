@@ -1,6 +1,7 @@
 interface User {
     email: string;
     id: string;
+    permissions: string[];
     role: UserRole;
 }
 

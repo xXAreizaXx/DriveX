@@ -1,13 +1,13 @@
 {
   "transfers": [
     {
-      "id": 1,
-      "plate": "2647KLR",
-      "type": "Venta",
       "client": "31002483T",
+      "created_at": "2024-12-17T18:00:00",
+      "plate": "2647KLR",
+      "service": 800,
       "transmitter": "30482746L",
-      "service": 900,
-      "created_at": "2024-12-17T18:00:00"
+      "type": "Venta",
+      "id": 1
     },
     {
       "id": 2,
@@ -17,6 +17,15 @@
       "transmitter": "47012845N",
       "service": 450,
       "created_at": "2024-12-16T10:30:00"
+    },
+    {
+      "client": "31002483T",
+      "created_at": "2025-01-07T18:41:05.528Z",
+      "plate": "6000IEW",
+      "service": 550,
+      "transmitter": "30482746L",
+      "type": "Venta",
+      "id": 3
     }
   ],
   "users": [
@@ -52,5 +61,38 @@
       "plate": "9821BHF",
       "service": 450
     }
-  ]
+  ],
+  "metrics": {
+    "overview": {
+      "total_transfers": 5,
+      "total_revenue": 3200,
+      "average_service_cost": 640
+    },
+    "transfers_by_type": {
+      "Venta": 3,
+      "Cesión": 2
+    },
+    "recent_activity": {
+      "last_24h": 2,
+      "last_week": 5
+    },
+    "top_clients": [
+      {
+        "document": "31002483T",
+        "name": "Cliente A",
+        "total_transfers": 3,
+        "total_spent": 1850
+      },
+      {
+        "document": "52018492F",
+        "name": "Cliente C",
+        "total_transfers": 2,
+        "total_spent": 1350
+      }
+    ],
+    "performance_metrics": {
+      "daily_average_transfers": 0.71,
+      "most_common_type": "Venta"
+    }
+  }
 }

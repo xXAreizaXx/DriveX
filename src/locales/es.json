@@ -1,6 +1,7 @@
 {
     "Constants": {
         "Btn": {
+            "Add": "Agregar",
             "Cancel": "Cancelar",
             "Close": "Cerrar",
             "Continue": "Continuar",
@@ -28,6 +29,29 @@
         "RowsPerPage": "Filas por página",
         "Search": "Buscar",
         "Welcome": "Bienvenido"
+    },
+    "Dashboard": {
+        "Header": "Dashboard",
+        "Overview": {
+            "TotalTransfers": "Transferencias totales",
+            "TotalRevenue": "Ingresos totales",
+            "AverageServiceCost": "Costo promedio del servicio"
+        },
+        "TransfersByType": {
+            "Title": "Transferencias por tipo",
+            "Sale": "Venta",
+            "Cession": "Cesión"
+        },
+        "RecentActivity": {
+            "Title": "Actividad reciente",
+            "Last24h": "Últimas 24 horas",
+            "LastWeek": "Última semana"
+        },
+        "PerformanceMetrics": {
+            "Title": "Métricas de rendimiento",
+            "DailyAverageTransfers": "Promedio diario de transferencias",
+            "MostCommonType": "Tipo más común"
+        }
     },
     "Headers": {
         "Actions": "Acciones",
@@ -60,25 +84,107 @@
         "UserPlaceholder": "Ingresa tu usuario"
     },
     "Schema": {
-        "Password": "Contraseña requerida",
-        "User": "Usuario requerido"
+        "Client": "Cliente requerido",
+        "ClientMin": "El cliente no puede estar vacío",
+        "Password": "Contraseña",
+        "PasswordMin": "La contraseña no puede estar vacía",
+        "Plate": "Placa requerida",
+        "PlateMin": "La placa no puede estar vacía",
+        "PlateRegex": "Formato de placa incorrecto (Ej: 0000AAA)",
+        "Service": "Servicio requerido",
+        "ServiceMin": "El servicio no puede estar vacío",
+        "TransferType": "Tipo de transferencia requerido",
+        "TransferTypeMin": "El tipo de transferencia no puede estar vacío",
+        "Transmitter": "Transmisor requerido",
+        "TransmitterMin": "El transmisor no puede estar vacío",
+        "User": "Usuario requerido",
+        "UserEmail": "Correo electrónico invalido",
+        "UserMin": "El usuario no puede estar vacío"
     },
     "Transfers": {
         "Create": {
-            "Title": "Crear transferencia",
-            "Description": "Crea una nueva transferencia"
+            "Description": "Crea una nueva transferencia de vehículos",
+            "Error": "Error al crear la transferencia",
+            "Success": "Transferencia creada con exito",
+            "Title": "Crear transferencia"
         },
         "Delete": {
-            "Title": "Eliminar transferencia",
-            "Description": "Elimina una transferencia"
+            "Description": "Elimina una transferencia",
+            "Error": "Error al eliminar la transferencia",
+            "Note": "Esto no se puede deshacer",
+            "Subtitle": "Estas a punto de eliminar una transferencia",
+            "Success": "Transferencia eliminada con exito",
+            "Title": "Elimna la transferencia seleccionada"
         },
+        "Cession": "Cesión",
+        "Client": "Cliente",
+        "ClientPlaceholder": "Seleccione el cliente",
+        "Info": "Información de la transferencia",
+        "Plate": "Placa",
+        "PlatePlaceholder": "Ingrese la placa",
+        "Sale": "Venta",
+        "Service": "Servicio",
+        "ServicePlaceholder": "Digite el servicio",
+        "TransferType": "Tipo de transferencia",
+        "TransferTypePlaceholder": "Seleccione el tipo de transferencia",
+        "Transmitter": "Transmisor",
+        "TransmitterPlaceholder": "Seleccione el transmisor",
+        "Vehicle": "Información del vehículo",
         "Update": {
-            "Title": "Actualizar transferencia",
-            "Description": "Actualiza una transferencia"
+            "Description": "Actualiza la información de la transferencia",
+            "Error": "Error al actualizar la transferencia",
+            "Success": "Transferencia actualizada con exito",
+            "Title": "Actualizar transferencia"
         }
     },
     "Unauthorized": {
         "Title": "Acceso denegado",
         "Subtitle": "No tienes permiso para acceder a esta página"
+    },
+    "Permission": {
+        "Dashboard": "Metricas",
+        "Roles": "Roles",
+        "Transfers": "Transferencias",
+        "Users": "Usuarios",
+        "DeleteTransfers": {
+            "Title": "Eliminar transferencias",
+            "Description": "Permite eliminar transferencias del sistema"
+        },
+        "DeleteUsers": {
+            "Title": "Eliminar usuarios",
+            "Description": "Permite eliminar usuarios del sistema"
+        },
+        "ManageRoles": {
+            "Title": "Gestionar roles",
+            "Description": "Permite crear, modificar y eliminar roles y sus permisos"
+        },
+        "ReadDashboard": {
+            "Title": "Ver dashboard",
+            "Description": "Permite acceder y visualizar el dashboard"
+        },
+        "ReadRoles": {
+            "Title": "Ver roles",
+            "Description": "Permite ver la lista de roles y sus permisos"
+        },
+        "ReadTransfers": {
+            "Title": "Ver transferencias",
+            "Description": "Permite ver la lista de transferencias"
+        },
+        "ReadUsers": {
+            "Title": "Ver usuarios",
+            "Description": "Permite ver la lista de usuarios"
+        },
+        "UpdateTransfers": {
+            "Title": "Actualizar transferencias",
+            "Description": "Permite modificar los datos de las transferencias existentes"
+        },
+        "WriteTransfers": {
+            "Title": "Crear transferencias",
+            "Description": "Permite crear nuevas transferencias en el sistema"
+        },
+        "WriteUsers": {
+            "Title": "Crear usuarios",
+            "Description": "Permite crear nuevos usuarios en el sistema"
+        }
     }
 }

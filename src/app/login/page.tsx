@@ -21,7 +21,7 @@ import { InputField, InputFieldPassword } from "@components/TextFields";
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Typography } from "@mui/material";
 
 // Utils
-import { UserRole } from "@constants/roles";
+import { ROLE_PERMISSIONS, UserRole } from "@constants/roles";
 import { type TLoginSchema, loginSchema } from "@utils/schemas";
 
 // External Dependencies
@@ -56,7 +56,8 @@ export default function LoginPage() {
         await signIn({
             email: data.user,
             id: "1",
-            role: role
+            role: role,
+            permissions: ROLE_PERMISSIONS[role]
         });
     };
 

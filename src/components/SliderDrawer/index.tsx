@@ -23,7 +23,7 @@ export default function SliderDrawer() {
 
     return (
         <Drawer anchor="right" open={open} onClose={toggleDrawer}>
-            <Box sx={{ width: 450 }} role="presentation" onClick={toggleDrawer}>
+            <Box sx={{ width: 450, height: "100%" }} role="presentation">
                 <Paper sx={{ p: 2, backgroundColor: "primary.main", borderRadius: "0px", boxShadow: "none" }}>
                     <Typography variant="h6" component="h2">
                         {t(params?.title as string)}
@@ -32,7 +32,9 @@ export default function SliderDrawer() {
                         {t(params?.description as string)}
                     </Typography>
                 </Paper>
-                {slideComponent}
+                <Paper sx={{ p: 2, borderRadius: "0px", boxShadow: "none", height: "calc(100% - 8rem)" }}>
+                    {slideComponent}
+                </Paper>
             </Box>
         </Drawer>
     );

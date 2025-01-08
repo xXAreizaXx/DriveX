@@ -1,11 +1,12 @@
 {
     "Constants": {
         "Btn": {
+            "Add": "Add",
             "Cancel": "Cancel",
             "Close": "Close",
             "Continue": "Continue",
             "Create": "Create",
-            "CreateNew": "Create new",
+            "CreateNew": "Create New",
             "Delete": "Delete",
             "Update": "Update",
             "Save": "Save"
@@ -16,8 +17,8 @@
             "Account": "Account",
             "Help": "Help",
             "Logout": "Logout",
-            "NewContract": "New contract",
-            "NewPerson": "New person"
+            "NewContract": "New Contract",
+            "NewPerson": "New Person"
         },
         "Of": "of",
         "Routes": {
@@ -29,12 +30,35 @@
         "Search": "Search",
         "Welcome": "Welcome"
     },
+    "Dashboard": {
+        "Header": "Dashboard",
+        "Overview": {
+            "TotalTransfers": "Total Transfers",
+            "TotalRevenue": "Total Revenue",
+            "AverageServiceCost": "Average Service Cost"
+        },
+        "TransfersByType": {
+            "Title": "Transfers by Type",
+            "Sale": "Sale",
+            "Cession": "Cession"
+        },
+        "RecentActivity": {
+            "Title": "Recent Activity",
+            "Last24h": "Last 24 hours",
+            "LastWeek": "Last week"
+        },
+        "PerformanceMetrics": {
+            "Title": "Performance Metrics",
+            "DailyAverageTransfers": "Daily Average Transfers",
+            "MostCommonType": "Most Common Type"
+        }
+    },
     "Headers": {
         "Actions": "Actions",
         "Client": "Client",
-        "CreatedAt": "Creation date",
+        "CreatedAt": "Created At",
         "Plate": "Plate",
-        "TransferType": "Transfer type",
+        "TransferType": "Transfer Type",
         "Transmitter": "Transmitter"
     },
     "Language": {
@@ -43,7 +67,7 @@
     },
     "Login": {
         "Admin": "Admin",
-        "Enter": "Log in",
+        "Enter": "Sign In",
         "Error": {
             "SignIn": "Incorrect email or password"
         },
@@ -55,30 +79,112 @@
         "Subtitle": {
             "SignIn": "Check your transfers and contracts"
         },
-        "Title": "Log in",
+        "Title": "Sign In",
         "User": "User",
         "UserPlaceholder": "Enter your username"
     },
     "Schema": {
-        "Password": "Password required",
-        "User": "User required"
+        "Client": "Client required",
+        "ClientMin": "Client cannot be empty",
+        "Password": "Password",
+        "PasswordMin": "Password cannot be empty",
+        "Plate": "Plate required",
+        "PlateMin": "Plate cannot be empty",
+        "PlateRegex": "Incorrect plate format (e.g., 0000AAA)",
+        "Service": "Service required",
+        "ServiceMin": "Service cannot be empty",
+        "TransferType": "Transfer type required",
+        "TransferTypeMin": "Transfer type cannot be empty",
+        "Transmitter": "Transmitter required",
+        "TransmitterMin": "Transmitter cannot be empty",
+        "User": "User required",
+        "UserEmail": "Invalid email address",
+        "UserMin": "User cannot be empty"
     },
     "Transfers": {
         "Create": {
-            "Title": "Create transfer",
-            "Description": "Create a new transfer"
+            "Description": "Create a new vehicle transfer",
+            "Error": "Error creating transfer",
+            "Success": "Transfer created successfully",
+            "Title": "Create Transfer"
         },
         "Delete": {
-            "Title": "Delete transfer",
-            "Description": "Delete a transfer"
+            "Description": "Delete a transfer",
+            "Error": "Error deleting transfer",
+            "Note": "This action cannot be undone",
+            "Subtitle": "You are about to delete a transfer",
+            "Success": "Transfer deleted successfully",
+            "Title": "Delete Selected Transfer"
         },
+        "Cession": "Cession",
+        "Client": "Client",
+        "ClientPlaceholder": "Select the client",
+        "Info": "Transfer Information",
+        "Plate": "Plate",
+        "PlatePlaceholder": "Enter the plate",
+        "Sale": "Sale",
+        "Service": "Service",
+        "ServicePlaceholder": "Enter the service",
+        "TransferType": "Transfer Type",
+        "TransferTypePlaceholder": "Select the transfer type",
+        "Transmitter": "Transmitter",
+        "TransmitterPlaceholder": "Select the transmitter",
+        "Vehicle": "Vehicle Information",
         "Update": {
-            "Title": "Update transfer",
-            "Description": "Update a transfer"
+            "Description": "Update transfer information",
+            "Error": "Error updating transfer",
+            "Success": "Transfer updated successfully",
+            "Title": "Update Transfer"
         }
     },
     "Unauthorized": {
-        "Title": "Access denied",
-        "Subtitle": "You don't have permission to access this page"
+        "Title": "Access Denied",
+        "Subtitle": "You do not have permission to access this page"
+    },
+    "Permission": {
+        "Dashboard": "Dashboard",
+        "Roles": "Roles",
+        "Transfers": "Transfers",
+        "Users": "Users",
+        "DeleteTransfers": {
+            "Title": "Delete Transfers",
+            "Description": "Allows deleting transfers from the system"
+        },
+        "DeleteUsers": {
+            "Title": "Delete Users",
+            "Description": "Allows deleting users from the system"
+        },
+        "ManageRoles": {
+            "Title": "Manage Roles",
+            "Description": "Allows creating, modifying, and deleting roles and permissions"
+        },
+        "ReadDashboard": {
+            "Title": "View Dashboard",
+            "Description": "Allows access and visualization of the dashboard"
+        },
+        "ReadRoles": {
+            "Title": "View Roles",
+            "Description": "Allows viewing the list of roles and permissions"
+        },
+        "ReadTransfers": {
+            "Title": "View Transfers",
+            "Description": "Allows viewing the list of transfers"
+        },
+        "ReadUsers": {
+            "Title": "View Users",
+            "Description": "Allows viewing the list of users"
+        },
+        "UpdateTransfers": {
+            "Title": "Update Transfers",
+            "Description": "Allows modifying the data of existing transfers"
+        },
+        "WriteTransfers": {
+            "Title": "Create Transfers",
+            "Description": "Allows creating new transfers in the system"
+        },
+        "WriteUsers": {
+            "Title": "Create Users",
+            "Description": "Allows creating new users in the system"
+        }
     }
 }

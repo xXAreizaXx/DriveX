@@ -6,7 +6,7 @@ export enum UserRole {
 
 export interface Permission {
   description: string;
-  id: string;
+  id: number;
   name: string;
 }
 

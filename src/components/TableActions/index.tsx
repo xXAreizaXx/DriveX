@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // Contexts
+import { useAuth } from "@contexts/AuthContext";
 import { useSlideAction } from "@contexts/SlideActionContext";
 
 // Components
@@ -14,9 +15,13 @@ import { BtnAlternative } from "@components/Buttons";
 import { Delete, Edit, List } from "@mui/icons-material";
 import { Menu, MenuItem, Typography } from "@mui/material";
 
+// Constants
+import { PERMISSIONS } from "@constants/roles";
+
 export default function TableActions({ module, params }: ITableActionsProps) {
     // Contexts
     const { setOpen, setModule, setParams } = useSlideAction();
+    const { user } = useAuth();
 
     // Translations
     const { t } = useTranslation();
@@ -54,6 +59,24 @@ export default function TableActions({ module, params }: ITableActionsProps) {
         setAnchorEl(null);
     };
 
+    const canUpdate = () => {
+        switch(module) {
+        case "transfers":
+            return user?.permissions?.includes(PERMISSIONS.UPDATE_TRANSFERS);
+        default:
+            return false;
+        }
+    };
+
+    const canDelete = () => {
+        switch(module) {
+        case "transfers":
+            return user?.permissions?.includes(PERMISSIONS.DELETE_TRANSFERS);
+        default:
+            return false;
+        }
+    };
+
     return (
         <div>
             <BtnAlternative
@@ -70,11 +93,19 @@ export default function TableActions({ module, params }: ITableActionsProps) {
                 onClose={handleClose}
                 open={open}
             >
-                <MenuItem onClick={() => handleAction("update")} sx={{ gap: 1 }}>
+                <MenuItem 
+                    onClick={() => handleAction("update")} 
+                    sx={{ gap: 1 }}
+                    disabled={!canUpdate()}
+                >
                     <Edit sx={{ color: "primary.main", fontSize: 20 }} />
                     <Typography variant="body2">{t("Constants.Update")}</Typography>
                 </MenuItem>
-                <MenuItem onClick={() => handleAction("delete")} sx={{ gap: 1 }}>
+                <MenuItem 
+                    onClick={() => handleAction("delete")} 
+                    sx={{ gap: 1 }}
+                    disabled={!canDelete()}
+                >
                     <Delete sx={{ color: "primary.main", fontSize: 20 }} />
                     <Typography variant="body2">{t("Constants.Delete")}</Typography>
                 </MenuItem>

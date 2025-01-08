@@ -1,8 +1,8 @@
 // Axios
 import { axiosInstance } from "./instance";
 
-export async function getTransfers() {
-    return await axiosInstance.get("/transfers");
+export async function getTransfers(filter: TFilterTransfer | null) {
+    return await axiosInstance.get("/transfers", { params: { plate: filter?.plate, type: filter?.transferType } });
 }
 
 export async function getOneTransfer(id: number) {

@@ -3,9 +3,9 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // MUI
-import { Button, CircularProgress, IconButton, Menu, MenuItem } from "@mui/material";
+import { Button, ButtonProps, CircularProgress, IconButton, Menu, MenuItem } from "@mui/material";
 
-export function BtnPrimary(props: IButtonProps) {
+export function BtnPrimary(props: IButtonProps & ButtonProps) {
     // Props
     const { children, isDisabled, isLoading = false } = props;
 
@@ -14,7 +14,7 @@ export function BtnPrimary(props: IButtonProps) {
     </Button>;
 }
 
-export function BtnSecondary(props: IButtonProps) {
+export function BtnSecondary(props: IButtonProps & ButtonProps) {
     // Props
     const { children, isDisabled, isLoading } = props;
 
@@ -23,7 +23,7 @@ export function BtnSecondary(props: IButtonProps) {
     </Button>;
 }
 
-export function BtnAlternative(props: IButtonProps) {
+export function BtnAlternative(props: IButtonProps & ButtonProps) {
     // Props
     const { children, isDisabled, isLoading } = props;
 
@@ -32,7 +32,7 @@ export function BtnAlternative(props: IButtonProps) {
     </Button>;
 }
 
-export function BtnMenu(props: IButtonProps) {
+export function BtnMenu(props: IButtonProps & ButtonProps) {
     // Props
     const { children, isDisabled, isOpen = false } = props;
 

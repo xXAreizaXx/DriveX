@@ -25,21 +25,57 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: var(--mui-palette-primary-50);
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: var(--mui-palette-primary-100);
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: var(--mui-palette-primary-200);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: var(--mui-palette-primary-400);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--mui-palette-primary-500);
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: var(--mui-palette-primary-600);
 }

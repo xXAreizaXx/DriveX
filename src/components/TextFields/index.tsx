@@ -16,6 +16,7 @@ import { VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material";
 interface InputFieldProps {
     control: Control<any>;
     errors: FieldErrors;
+    icon?: React.ReactNode;
     label: string;
     name: string;
     placeholder: string;
@@ -58,13 +59,23 @@ export function InputField(props: InputFieldProps) {
                     {...field}
                     {...props}
                     {...rest}
-                    sx={{ backgroundColor: "background.paper" }}
                     error={Boolean(error)}
+                    fullWidth
                     helperText={error}
                     id="outlined-basic"
                     label={label}
                     placeholder={placeholder}
                     size="small"
+                    slotProps={{
+                        input: {
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    {props.icon}
+                                </InputAdornment>
+                            )
+                        }
+                    }}
+                    sx={{ backgroundColor: "background.paper" }}
                     variant={variant}
                 />
             )}
@@ -106,19 +117,21 @@ export function InputFieldPassword(props: InputFieldProps) {
                     error={Boolean(error)}
                     helperText={error}
                     id="outlined-basic"
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <IconButton
-                                    aria-label="toggle password visibility"
-                                    onClick={handleClickShowPassword}
-                                    onMouseDown={handleMouseDownPassword}
-                                    edge="end"
-                                >
-                                    {!showPassword ? <VisibilityOutlined /> : <VisibilityOffOutlined />}
-                                </IconButton>
-                            </InputAdornment>
-                        )
+                    slotProps={{
+                        input: {
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        aria-label="toggle password visibility"
+                                        onClick={handleClickShowPassword}
+                                        onMouseDown={handleMouseDownPassword}
+                                        edge="end"
+                                    >
+                                        {!showPassword ? <VisibilityOutlined /> : <VisibilityOffOutlined />}
+                                    </IconButton>
+                                </InputAdornment>
+                            )
+                        }
                     }}
                     label={label}
                     placeholder={placeholder}
@@ -150,7 +163,7 @@ export function InputSelect(props: InputSelectProps) {
             control={control}
             name={name}
             render={({ field }) => (
-                <FormControl size="small" error={Boolean(error)}>
+                <FormControl size="small" error={Boolean(error)} fullWidth>
                     <InputLabel id="demo-select-small-label">{label}</InputLabel>
                     <Select
                         {...field}
@@ -158,9 +171,8 @@ export function InputSelect(props: InputSelectProps) {
                         {...rest}
                         error={Boolean(error)}
                         label={label}
-                        size="small"
                         labelId="demo-select-small-label"
-                        id="demo-select-small"
+                        size="small"
                     >
                         {options.map((option) => (
                             <MenuItem key={option.value} value={option.value}>

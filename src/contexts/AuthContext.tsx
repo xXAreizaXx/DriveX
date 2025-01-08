@@ -2,7 +2,7 @@
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 // Constants
-import { ROLE_PERMISSIONS, UserRole } from "@constants/roles";
+import { ROLE_PERMISSIONS } from "@constants/roles";
 
 const AuthContext = createContext<IAuthContext>({
     clearError: () => { },
@@ -38,13 +38,20 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
             setIsLoading(true);
             setError(null);
 
+            const rolePermissions = ROLE_PERMISSIONS[userData.role as never] || [];
+            
+            const userWithPermissions = {
+                ...userData,
+                permissions: rolePermissions
+            };
+
             const token = btoa(JSON.stringify({ userId: userData.id, timestamp: Date.now() }));
 
             localStorage.setItem(TOKEN_KEY, token);
-            localStorage.setItem(USER_KEY, JSON.stringify(userData));
+            localStorage.setItem(USER_KEY, JSON.stringify(userWithPermissions));
 
             setIsAuthenticated(true);
-            setUser(userData);
+            setUser(userWithPermissions);
 
             window.location.href = "/home";
         } catch (err) {
@@ -83,9 +90,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
 
     const hasPermission = useCallback((permission: string): boolean => {
         if (!user) return false;
-
-        const userPermissions = ROLE_PERMISSIONS[user.role as UserRole];
-        return Array.isArray(userPermissions) && userPermissions.includes(permission as never);
+        return user.permissions.includes(permission);
     }, [user]);
 
     // Effects

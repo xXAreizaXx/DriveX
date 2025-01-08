@@ -1,81 +1,80 @@
 "use client";
 
-// ReactJS
-import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-
-// MUI
-import { TableCell, TableRow, TextField } from "@mui/material";
-
 // HOC
 import { withAuth } from "@HOC/withAuth";
 
-// Components
-import Pagination from "@components/Pagination";
-import { TableSkeleton } from "@components/Skeletons";
-import TableLayout from "@components/TableLayout";
+// Context
+import { useAuth } from "@contexts/AuthContext";
 
-// Services
-import { getTransfers } from "@services/transfers";
+// MUI
+import { Box, Chip, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
 
 // Constants
-import { HTransfers } from "@constants/headers";
+import { permissions } from "@constants/permissions";
 import { UserRole } from "@constants/roles";
+import { useTranslation } from "react-i18next";
 
-function RolesPage() {
-    // Translations
-    const { t } = useTranslation();
-
-    // States
-    const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(5);
-
-    // Query
-    const { data: transfers, isLoading } = useQuery<TTransfer[]>({
-        queryKey: ["transfers"],
-        queryFn: () => getTransfers()
-            .then((res) => {
-                return res?.data ?? [];
-            })
-            .catch(() => [])
-    });
-
-    // Constants
-    const visibleRows = transfers?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
-
-    if (isLoading) return <TableSkeleton />;
-
-    return (
-        <TableLayout tableHeader={HTransfers}>
-            <TextField
-                key="Filter"
-                fullWidth
-                label={t("Constants.Search")}
-                variant="outlined"
-            />
-            {visibleRows?.map((row) => (
-                <TableRow key={row?.id} tabIndex={-1}>
-                    <TableCell align="center">{row?.plate}</TableCell>
-                    <TableCell align="center">{row?.type}</TableCell>
-                    <TableCell align="center">{row?.client}</TableCell>
-                    <TableCell align="center">{row?.transmitter}</TableCell>
-                    <TableCell align="center">{row?.created_at}</TableCell>
-                </TableRow>
-            ))}
-            <Pagination
-                data={transfers as TTransfer[]}
-                key="Pagination"
-                page={page}
-                rowsPerPage={rowsPerPage}
-                setPage={setPage}
-                setRowsPerPage={setRowsPerPage}
-            />
-        </TableLayout>
-    );
+// Types
+interface GroupedPermissions {
+    [module: string]: Array<{
+        action: string;
+        description: string;
+        id: number;
+        name: string;
+    }>;
 }
 
+function RolesPage(): JSX.Element {
+    // Context
+    const { user } = useAuth();
+
+    // Translation
+    const { t } = useTranslation();
+
+    // Functions
+    const groupByModule = (permissionsList: string[]): GroupedPermissions => {
+        return permissionsList.reduce((acc: GroupedPermissions, permission: string) => {
+            const [action, module] = permission.split(":");
+
+            if (!acc[module]) {
+                acc[module] = [];
+            }
+
+            acc[module].push({
+                action,
+                ...(permissions[permission as keyof typeof permissions]),
+            });
+
+            return acc;
+        }, {});
+    };
+
+    const groupedPermissions = groupByModule(user?.permissions || []);
+
+    return (
+        <Box>
+            {Object.entries(groupedPermissions).map(([module, actions]) => (
+                <Paper key={module} elevation={3} sx={{ mb: 4, p: 2, backgroundColor: "primary.50" }}>
+                    <Typography variant="h5" sx={{ color: "primary.main", mb: 1 }}>
+                        <Chip label={t(`Permission.${module.charAt(0).toUpperCase() + module.slice(1)}`)} color="primary" />
+                    </Typography>
+                    <List>
+                        {actions.map(({ action, name, description, id }) => (
+                            <ListItem key={id} sx={{ borderBottom: "1px solid", borderColor: "primary.100" }}>
+                                <ListItemText
+                                    primary={<Typography variant="body1" sx={{ fontWeight: "bold" }}>{t(name)}</Typography>}
+                                    secondary={<Typography variant="body2" sx={{ color: "text.secondary" }}>{t(description)}</Typography>}
+                                />
+                            </ListItem>
+                        ))}
+                    </List>
+                </Paper>
+            ))}
+        </Box>
+    );
+}
 
 export default withAuth(RolesPage, {
     requiredRoles: [UserRole.ADMIN, UserRole.USER],
 });
+

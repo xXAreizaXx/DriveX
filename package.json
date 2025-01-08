@@ -7,28 +7,30 @@
     "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^3.9.1",
     "@mui/icons-material": "^6.3.1",
-    "@mui/material-nextjs": "^6.3.1",
     "@mui/material": "^6.3.1",
+    "@mui/material-nextjs": "^6.3.1",
+    "@mui/x-charts": "^7.23.2",
+    "@mui/x-data-grid": "^7.23.5",
     "@tanstack/react-query": "^5.62.14",
     "axios": "^1.7.9",
     "i18next": "^24.2.0",
     "next": "14.2.3",
+    "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.54.2",
     "react-i18next": "^15.4.0",
-    "react": "^18",
     "styled-components": "^6.1.14",
     "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react-dom": "^18",
     "@types/react": "^18",
+    "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
-    "eslint-config-next": "15.0.2",
     "eslint": "^8",
+    "eslint-config-next": "15.0.2",
     "husky": "^9.0.11",
     "typescript": "^5"
   },
@@ -45,7 +47,7 @@
     "lint": "next lint",
     "prepare": "husky",
     "server": "npx json-server --watch db.json --port 8080",
-    "start": "next start & npx json-server --watch db.json --port 8080"
+    "start": "next start"
   },
   "version": "0.1.0"
 }

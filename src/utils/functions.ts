@@ -8,21 +8,25 @@ export function formatterCurrency(value: number, currency?: string) {
 // Result: "$1,000,000.00"
 
 export function formatterLongDate(date: Date) {
+    if (!date) return "";
+    
     return new Intl.DateTimeFormat("es-CO", {
         day: "numeric",
         month: "long",
         year: "numeric",
-    }).format(date);
+    })?.format(date);
 }
 // Example of use: formatterLongDate(new Date());
 // Result: "6 de septiembre de 2021"
 
 export function formatterShortDate(date: Date) {
+    if (!date) return "";
+
     return new Intl.DateTimeFormat("es-CO", {
         day: "numeric",
         month: "numeric",
         year: "numeric",
-    }).format(date);
+    })?.format(date);
 }
 // Example of use: formatterShortDate(new Date());
 // Result: "6/9/2021"

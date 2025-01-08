@@ -19,6 +19,7 @@
     "jsx-a11y/anchor-is-valid": "error",
     "no-unused-vars": "off",
     "quotes": ["error", "double"],
+    "react-hooks/exhaustive-deps": "off",
     "semi": ["error", "always"]
   },
   "settings": {

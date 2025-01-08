@@ -1,19 +1,27 @@
 type TTransfer = {
+    client: string;
+    created_at: string;
     id: number;
     plate: string;
-    type: string;
-    client: string;
-    transmitter: string;
     service: number;
-    created_at: string;
+    transmitter: string;
+    type: string;
 };
 
 type DtoTransfer = {
-    id: number;
-    plate: string;
-    type: string;
     client: string;
-    transmitter: string;
-    service: number;
     created_at: string;
+    plate: string;
+    service: number;
+    transmitter: string;
+    type: string;
 };
+
+type TFilterTransfer = {
+    plate: string;
+    transferType: string
+};
+
+interface IFilterTransfersProps {
+    setFilter: React.Dispatch<React.SetStateAction<TFilterTransfer | null>>
+}

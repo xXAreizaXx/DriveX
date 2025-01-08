@@ -1,5 +1,6 @@
 interface TableLayoutProps {
     children: React.ReactNode[];
+    module: "transfers";
     tableHeader: readonly string[];
 }
 

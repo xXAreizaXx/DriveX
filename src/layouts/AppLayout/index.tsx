@@ -11,6 +11,9 @@ import SliderDrawer from "@components/SliderDrawer";
 // MUI
 import { Toolbar } from "@mui/material";
 
+// Providers
+import { SnackbarProvider } from "@providers/SnackbarProvider";
+
 // Styled
 import { AppChildren, AppContainer, AppContent } from "./styled";
 
@@ -24,16 +27,18 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     };
 
     return (
-        <AppContainer>
-            <SlideBar open={open} toggleDrawer={toggleSlider} />
-            <NavBar open={open} />
-            <AppContent>
-                <Toolbar />
-                <AppChildren>
-                    {children}
-                </AppChildren>
-            </AppContent>
-            <SliderDrawer />
-        </AppContainer>
+        <SnackbarProvider>
+            <AppContainer>
+                <SlideBar open={open} toggleDrawer={toggleSlider} />
+                <NavBar open={open} />
+                <AppContent>
+                    <Toolbar />
+                    <AppChildren>
+                        {children}
+                    </AppChildren>
+                </AppContent>
+                <SliderDrawer />
+            </AppContainer>
+        </SnackbarProvider>
     );
 }
