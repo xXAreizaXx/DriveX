@@ -46,7 +46,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "prepare": "husky",
-    "server": "npx json-server --watch db.json --port 8080",
+    "server": "npx json-server db.json --port 8080",
     "start": "next start"
   },
   "version": "0.1.0"
