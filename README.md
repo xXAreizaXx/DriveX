@@ -94,7 +94,7 @@ DriveX es un panel de administración moderno desarrollado con Next.js y Materia
 
 3. **Configurar variables de entorno**
    ```
-   NEXT_PUBLIC_API_URL=http://localhost:8080
+   NEXT_PUBLIC_API_URL=https://drivex-api.onrender.com
    ```
 
 4. **Iniciar el servidor de desarrollo y mock API**
